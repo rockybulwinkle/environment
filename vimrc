@@ -14,3 +14,5 @@ set textwidth=0 wrapmargin=0
 "set undoreload=10000        " number of lines to save for undo
 set viminfo='20,<10000
 set mouse-=a
+set nowrapscan "disable wrapping around to beginning when searching
+set hlsearch

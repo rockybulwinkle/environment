@@ -1,0 +1,36 @@
+#!/bin/bash
+options=()
+files=()
+CHOICE=0
+i=0
+for file in `find . -iname "$1*"` ; do
+    options+=($i $file)
+    files+=($file)
+    i=$((i+1))
+done
+
+if (( $i > 1 )); then
+    HEIGHT=400
+    WIDTH=400
+    CHOICE_HEIGHT=400
+    BACKTITLE="Backtitle here"
+    TITLE="Title here"
+    MENU="Choose one of the following options:"
+
+    CHOICE=$(dialog --clear \
+        --menu "$MENU" \
+        $HEIGHT $WIDTH $CHOICE_HEIGHT \
+        "${options[@]}" \
+        2>&1 >/dev/tty)
+
+        #--backtitle "$BACKTITLE" \
+        #--title "$TITLE" \
+fi
+
+if [ "$i" == "0" ]; then
+    echo "No files found"
+    exit -1
+fi
+
+vim "${files[$CHOICE]}"
+clear

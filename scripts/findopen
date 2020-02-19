@@ -1,4 +1,8 @@
 #!/bin/bash
+# This script takes as an argument a part of a filename to search for,
+# shows a dialog to select a file if there are multiple matches,
+# then opens it with $EDITOR.
 
 file=`simplefind $1`
 vim $file
+

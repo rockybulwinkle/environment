@@ -1,2 +1,6 @@
 alias diff='git diff --no-index'
 alias ls='ls --color=auto'
+
+alias fo='findopen'
+alias wo='whichopen'
+alias sf='simplefind'

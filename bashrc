@@ -11,3 +11,4 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 source $DIR/aliases $DIR
 source $DIR/paths $DIR
+source $DIR/env

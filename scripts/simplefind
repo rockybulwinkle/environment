@@ -3,7 +3,11 @@ options=()
 files=()
 CHOICE=0
 i=0
-for file in `find . -iname "$1*"` ; do
+
+name=$1
+shift #shift the args over
+
+for file in `find . "$@" -iname "*$name*"` ; do
     options+=($i $file)
     files+=($file)
     i=$((i+1))
@@ -25,11 +29,10 @@ if (( $i > 1 )); then
 
         #--backtitle "$BACKTITLE" \
         #--title "$TITLE" \
-    clear
 fi
 
 if [ "$i" == "0" ]; then
     exit -1
 fi
 
-echo "${files[$CHOICE]}"
+printf "${files[$CHOICE]}"

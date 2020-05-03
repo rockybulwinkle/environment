@@ -1,0 +1,3 @@
+#!/bin/bash
+#limit the maximum charge on the battery, limit wear and tear
+echo 75 > /sys/class/power_supply/BAT0/charge_control_end_threshold

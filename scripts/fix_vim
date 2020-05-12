@@ -1,0 +1,9 @@
+#!/bin/bash
+user=`whoami`
+home=$HOME
+
+#make sure correct permissions on viminfo
+sudo chmod 600 $home/.viminfo
+
+#make sure we own .viminfo
+sudo chown $user:$user $home/.viminfo

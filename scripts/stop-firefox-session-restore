@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/.mozilla/firefox/*.default
+mkdir -p sessionstore-backups-disabled
+mv sessionstore-backups/recovery* sessionstore-backups-disabled
+mv sessionstore-backups/previous* sessionstore-backups-disabled

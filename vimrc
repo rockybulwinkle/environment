@@ -2,7 +2,10 @@ syntax on
 filetype plugin indent on
 syntax enable
 set autoindent
-set smartindent
+"Note, smartindent annoyingly causes python comments to be left justified.
+"cindent works fine
+"set smartindent
+set cindent
 set expandtab
 set modeline
 set ls=2
@@ -16,3 +19,5 @@ set viminfo='20,<10000
 set mouse-=a
 set nowrapscan "disable wrapping around to beginning when searching
 set hlsearch
+map <F1> <Esc>
+imap <F1> <Esc>

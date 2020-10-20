@@ -5,3 +5,11 @@ alias fo='findopen'
 alias wo='whichopen'
 alias sf='simplefind'
 alias dmesg='dmesg -T'
+
+function rsynccp() {
+    rsync -rahP --modify-window=1 "$@"
+}
+function rsyncmv() {
+    rsync -rahP --modify-window=1 --remove-sent-files "$@"
+}
+

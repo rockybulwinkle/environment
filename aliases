@@ -13,3 +13,11 @@ function rsyncmv() {
     rsync -rahP --modify-window=1 --remove-sent-files "$@"
 }
 
+alias work='. work'
+
+
+function mcd() {
+    #Makes a directory and immediate switches to it.
+    mkdir -p $1
+    cd $1
+}
